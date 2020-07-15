@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'walletcoreios'
-    spec.version      = '0.0.2'
+    spec.version      = '0.0.3'
     spec.ios.deployment_target = "8.0"
     spec.osx.deployment_target = "10.10"
     spec.tvos.deployment_target = "9.0"
