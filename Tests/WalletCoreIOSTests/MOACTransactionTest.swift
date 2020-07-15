@@ -8,7 +8,7 @@ import XCTest
 import BigInt
 import Foundation
 
-@testable import chain3swift
+@testable import walletcoreios
 
 final class MOACTransactionTest: XCTestCase {
     func testTransaction() throws {
@@ -25,8 +25,8 @@ final class MOACTransactionTest: XCTestCase {
                                                   systemContract: 0,
                                                   shardingFlag: 0)
             let privateKeyData = Data.fromHex("0x4646464646464646464646464646464646464646464646464646464646464646")!
-            let publicKey = try Chain3Utils.privateToPublic(privateKeyData, compressed: false)
-            let sender = try Chain3Utils.publicToAddress(publicKey)
+            let publicKey = try Web3Utils.privateToPublic(privateKeyData, compressed: false)
+            let sender = try Web3Utils.publicToAddress(publicKey)
             transaction.chainID = 1
             let hash = transaction.hashForSignature(chainID: 1)
             print("1:" + hash!.hex)

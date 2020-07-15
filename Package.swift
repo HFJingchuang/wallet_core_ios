@@ -7,7 +7,7 @@ let package = Package(
   name: "wallet_core_ios",
   products: [
     // Products define the executables and libraries produced by a package, and make them visible to other packages.
-    .library(name: "WalletCoreIOS", targets: ["web3swift","chain3swift"])
+    .library(name: "WalletCoreIOS", targets: ["walletcoreios"])
     ],
   dependencies: [
     .package(url: "https://github.com/attaswift/BigInt.git", from: "3.1.0"),
@@ -21,24 +21,13 @@ let package = Package(
     .target(name: "keccak"),
     .target(name: "scrypt"),
     .target(
-      name: "web3swift",
-      dependencies: ["BigInt", "secp256k1", "keccak", "scrypt", "PromiseKit"],
+      name: "walletcoreios",
+      dependencies: ["BigInt", "secp256k1", "keccak", "scrypt", "PromiseKit","CryptoSwift"],
       exclude: [
         "ObjectiveC",
         "Utils/EIP67Code.swift",
         "Migration-iOS.swift"
         ]),
-    .target(
-    name: "chain3swift",
-    dependencies: ["BigInt", "CryptoSwift", "secp256k1", "PromiseKit"],
-    exclude: [
-      "ObjectiveC",
-      "Utils/EIP67Code.swift",
-      "Migration.swift"
-      ]),
-    .testTarget(
-      name: "web3swiftTests",
-      dependencies: ["web3swift","chain3swift"]),
-    .testTarget(name: "WalletCoreIOSTests",dependencies: ["web3swift","chain3swift"])
+    .testTarget(name: "WalletCoreIOSTests",dependencies: ["walletcoreios"])
     ]
 )

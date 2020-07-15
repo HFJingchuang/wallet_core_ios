@@ -8,7 +8,7 @@
 import XCTest
 import BigInt
 
-@testable import web3swift
+@testable import walletcoreios
 
 final class ETHTransactionTest: XCTestCase {
     func testTransaction() throws {
