@@ -10,9 +10,12 @@ Pod::Spec.new do |spec|
     spec.homepage     = 'https://github.com/HFJingchuang/wallet_core_ios'
     spec.author       = 'MYXU'
     spec.source       = { :git => 'https://github.com/HFJingchuang/wallet_core_ios.git', :tag => spec.version }
-    spec.source_files = 'Sources/web3swift/**/*.swift','Sources/chain3swift/**/*.swift'
+    spec.source_files = 'Sources/walletcoreios/**/*.swift'
     spec.swift_version = '4.2'
+    spec.dependency 'CryptoSwift', '~> 0.12'
     spec.dependency 'PromiseKit', '~> 6.4'
     spec.dependency 'BigInt', '~> 3.1'
-    spec.dependency 'CryptoSwift', '~> 0.12'
+    spec.dependency 'secp256k1.c', '~> 0.1'
+    spec.dependency 'keccak.c', '~> 0.1'
+    spec.dependency 'scrypt.c', '~> 0.1'
 end
