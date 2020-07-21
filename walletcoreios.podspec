@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
     spec.name         = 'walletcoreios'
-    spec.version      = '0.0.1'
+    spec.version      = '0.0.2'
     spec.ios.deployment_target = "8.0"
     spec.osx.deployment_target = "10.10"
     spec.tvos.deployment_target = "9.0"
@@ -17,5 +17,4 @@ Pod::Spec.new do |spec|
     spec.dependency 'BigInt', '~> 3.1'
     spec.dependency 'secp256k1.c', '~> 0.1'
     spec.dependency 'keccak.c', '~> 0.1'
-    spec.dependency 'scrypt.c', '~> 0.1'
 end
